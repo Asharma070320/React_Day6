@@ -1,23 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './Component/Navbar';
+import Main from './Component/Main';
+import { useState } from 'react';
 
 function App() {
+
+  let[As,setAs] = useState(0);
+
+  function getData(information){
+    console.log(information);
+    if(information==="increase"){
+      setAs(As+1);
+    }else if(information==="decrease"){
+     if(As==0){
+      setAs(0)
+     }else{
+      setAs(As-1)
+     }
+    }
+  }
+  console.log(As);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Navbar send={As}/>
+      <Main  data={getData}/>
     </div>
   );
 }
