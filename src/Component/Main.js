@@ -1,4 +1,5 @@
 import Cards from "./Cards";
+import Footer from "./Footer";
 function Main(props){
 
     function increaseFn(){
@@ -22,6 +23,8 @@ function Main(props){
                 <Cards image="https://www.course-api.com/images/cart/phone-3.png" name="Xiaomi Redmi Note 2" rupees="$699.99" increase={increaseFn} decrease={decreaseFn}/>
 
                 <Cards image="https://www.course-api.com/images/cart/phone-4.png" name="Samsung Galaxy S7" rupees="$599.99" increase={increaseFn} decrease={decreaseFn}/>
+
+                <Footer />
                 
             </div>
             </div>
