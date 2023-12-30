@@ -8,15 +8,16 @@ function Cards(props){
         setCounter(Counter+1);
     }
     
-    function decreaseBtn(){
-        if(Counter==0){
+    function decreaseBtn(e){
+        if(Counter<1){
             setCounter(0);
         }else{
-           
             setCounter(Counter-1)
+            props.decrease(e);
         }
-        props.decrease();
+      
     }
+
 
     return(
         <div className="cardsContainer">

@@ -9,12 +9,19 @@ function Main(props){
 
       function decreaseFn(){
         props.data("decrease")
+        console.log(props.data)
+      }
+      
+      function deleteFn(){
+        document.querySelector(".allCards").innerHTML= `<h1 class="centerr">Your cart is Empty </h1>`
+       props.update();
       }
 
     return(
         <div className="mainContainer">
             <div className="content">
             <p className="big">YOUR BAG</p>
+
             <div className="allCards">
                 <Cards image="https://www.course-api.com/images/cart/phone-1.png" name="Samsung Galaxy S8" rupees="$399.99" increase={increaseFn} decrease={decreaseFn}/>
 
@@ -24,7 +31,7 @@ function Main(props){
 
                 <Cards image="https://www.course-api.com/images/cart/phone-4.png" name="Samsung Galaxy S7" rupees="$599.99" increase={increaseFn} decrease={decreaseFn}/>
 
-                <Footer />
+                <Footer delete={deleteFn}/>
                 
             </div>
             </div>
